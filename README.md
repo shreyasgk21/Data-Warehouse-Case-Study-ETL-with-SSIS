@@ -12,3 +12,23 @@ I had a fact_sales table that needed to be extracted and transformed into a data
 
 | transaction_id | transactional_date | product_id | customer_id | payment | credit_card | loyalty_card	| cost | quantity | price |
 | -------------- |:------------------:| ----------:| -----------:| -------:| -----------:| ------------:| ----:| --------:| -----:|
+
+
+*Designing the Data Warehouse:*
+
+I used a star schema for simplicity and performance:
+
+1.Fact Table: FactSales
+
+    Includes: transaction_id, transactional_date, product_id, customer_id, payment, credit_card, loyalty_card, cost, quantity, price
+    
+2.Dimension Tables:
+
+    DimProduct: Contains details about products (product_id, product_name, category).
+    
+    DimCustomer: Contains details about customers (customer_id, name, location).
+    
+    DimDate: Contains details about dates (date_id, day, month, year, quarter).
+   
+    DimPayment: Contains payment methods (payment_id, payment_type, credit_card_provider).
+
