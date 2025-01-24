@@ -89,4 +89,35 @@ FactSales Table:
 
 *ETL with SSIS:*
 
+I used SQL Server Integration Services to perform ETL operations I loaded the FactSales table and then performed required ETL operations to obtain the other Dimension Tables.
+
+For DimProduct Table:
+I mapped the FactSales table to the necessary columns in the DimProduct Table and ran the package.
+
+![image](https://github.com/user-attachments/assets/bd645cc3-dc12-4a8d-bb9c-98b355b34626)
+
+For DimCustomer Table:
+For DimCustomer, I aggreagated the data from the customer_id column of the FactSales Table by using a group by operation
+
+![image](https://github.com/user-attachments/assets/194e97bf-4755-4251-8939-63ebc15d0a39)
+
+For DimDate Table:
+For DimDate I used a derived column tranformation in order to get the date value from the FactSales Table
+I used the following expression in order to get the desired output:
+            
+            LEFT((DT_WSTR,20)transactional_date,10)
+
+![image](https://github.com/user-attachments/assets/fa1a77f6-e237-4454-bbe2-77d234d7efd7)
+
+For DimPayment Table:
+I mapped the FactSales table to the necessary columns in the DimPayment Table and ran the package.
+
+![image](https://github.com/user-attachments/assets/c361b25d-f51a-4723-8583-8ebad3e4d6e0)
+
+
+*Concclusion*
+From this case study, I was able to design and create a efficient data warehouse using a star schema to boost performance. I was able to carry out ETL operations to get the required Dimension Tables. With Jobs this would be an effective solution for an organisation to run on a regular basis.
+
+
+
 
